@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LottoWorld/app/src/main/res/drawable/round_view.xml" value="0.1415" />
+        <entry key="..\:/LottoWorld/app/src/main/res/layout/activity_check_winning.xml" value="0.36614583333333334" />
         <entry key="..\:/LottoWorld/app/src/main/res/layout/activity_intro.xml" value="0.36614583333333334" />
         <entry key="..\:/LottoWorld/app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>

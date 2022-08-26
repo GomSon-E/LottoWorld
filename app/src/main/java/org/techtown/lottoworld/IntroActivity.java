@@ -26,7 +26,7 @@ public class IntroActivity extends AppCompatActivity {
                 finish();
             }
             //2초 딜레이 후 Runner 객체 실행
-        },2000);
+        },1500);
     }
 
     @Override
