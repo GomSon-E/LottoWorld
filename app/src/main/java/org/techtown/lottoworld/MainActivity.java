@@ -2,8 +2,10 @@ package org.techtown.lottoworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         // Todo : 일단 예시로 1029 넣어둠 최신회차로 변경해야됨
         viewMatching();
         getLottoApi("1029");
+        buttonIntentMatching();
     }
 
 
@@ -120,5 +123,23 @@ public class MainActivity extends AppCompatActivity {
         latestWinningNumber_6.setText(winningNumbers_Main[5]);
         latestWinningNumber_Bonus.setText(winningNumbers_Main[6]);
         roundMain.setText("1029" + " 회차");
+    }
+
+    // button 액티비티 연결
+    public void buttonIntentMatching(){
+         checkWinning.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(getApplicationContext(), CheckWinningActivity.class);
+                 startActivity(intent);
+             }
+         });
+         winningHistory.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(getApplicationContext(), WinningNumPage.class);
+                 startActivity(intent);
+             }
+         });
     }
 }
