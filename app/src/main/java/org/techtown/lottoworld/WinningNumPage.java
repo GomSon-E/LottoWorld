@@ -20,7 +20,7 @@ public class WinningNumPage extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         WinningNumAdapter adapter = new WinningNumAdapter();
 
-        adapter.addItem(new WinningNumber(1030, "2010-10-29", new int[] {13, 25, 30, 31, 37, 41, 24} ));
+        adapter.addItem(new WinningNumber(1030, "2010-10-19", new int[] {13, 25, 30, 31, 37, 41, 24} ));
         adapter.addItem(new WinningNumber(1030, "2010-10-29", new int[] {13, 25, 30, 31, 37, 41, 24} ));
         adapter.addItem(new WinningNumber(1030, "2010-10-29", new int[] {13, 25, 30, 31, 37, 41, 24} ));
         adapter.addItem(new WinningNumber(1030, "2010-10-29", new int[] {13, 25, 30, 31, 37, 41, 24} ));
