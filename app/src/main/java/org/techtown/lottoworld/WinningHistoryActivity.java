@@ -65,8 +65,8 @@ public class WinningHistoryActivity extends AppCompatActivity {
 
                 if(lastPosition == totalCount){
                     //아이템 추가 ! 입맛에 맞게 설정하시면됩니다.
-                    adapter.notifyDataSetChanged();
-                }
+                    //
+                    adapter.notifyDataSetChanged();}
             }
         });
     }
