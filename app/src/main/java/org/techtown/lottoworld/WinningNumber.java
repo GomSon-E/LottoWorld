@@ -5,15 +5,6 @@ public class WinningNumber {
     String date;// 당첨일
 
     int[] winningNums = new int[7]; // 보너스 넘버까지 7개
-
-    public int[] getWinningNums() {
-        return winningNums;
-    }
-
-    public void setWinningNums(int[] winningNums) {
-        this.winningNums = winningNums;
-    }
-
     int total;
     int even; // 짝수만 지정하고 홀수는 6 - even 으로 코딩
 
@@ -28,6 +19,15 @@ public class WinningNumber {
         this.date = date;
         this.winningNums = winningNums;
     }
+
+    public int[] getWinningNums() {
+        return winningNums;
+    }
+
+    public void setWinningNums(int[] winningNums) {
+        this.winningNums = winningNums;
+    }
+
 
     public int getTotal() {
         for(int i = 0; i < 6; i++){
@@ -64,7 +64,7 @@ public class WinningNumber {
 
 
 
-    public String numberString(){
+    public String numberString(){ // 당첨번호 보너스를 제외한 6개를 붙인 문자열
 
         StringBuilder sb = new StringBuilder(); // well estimated buffer
         for (int num : winningNums) {

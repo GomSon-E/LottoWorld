@@ -55,7 +55,6 @@ public class DataAdapter
             String sql ="SELECT * FROM " + TABLE_NAME;
 
             // 모델 넣을 리스트 생성
-            List userList = new ArrayList();
             List winningList = new ArrayList();
 
             // TODO : 모델 선언
@@ -84,11 +83,11 @@ public class DataAdapter
                     winningNumber.setWinningNums(new int[]{first,second,third,fourth,fifth,sixth,bonus});
 
                     // 리스트에 넣기
-                    userList.add(winningNumber);
+                    winningList.add(winningNumber);
                 }
 
             }
-            return userList;
+            return winningList;
         }
         catch (SQLException mSQLException)
         {
