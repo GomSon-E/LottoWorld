@@ -1,13 +1,18 @@
 package org.techtown.lottoworld;
 
+import static org.techtown.lottoworld.IntroActivity.winningNumberList;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.sql.SQLException;
@@ -19,7 +24,6 @@ public class WinningHistoryActivity extends AppCompatActivity {
     int totalItem;
     int page = 0; // 현재 페이지
 
-    public List<WinningNumber> winningNumberList;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -29,24 +33,20 @@ public class WinningHistoryActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         WinningNumAdapter adapter = new WinningNumAdapter();
 
 
-        try {
-            initLoadDB(); //db읽어서 winningnum 리스트에 할당
+        totalItem = winningNumberList.size();
 
-            totalItem = winningNumberList.size();
+        if(totalItem % 10 == 0){ // 전체 페이지 계산
+            pages = totalItem / 10;
+        }else{  pages = totalItem / 10 + 1; }
 
-            if(totalItem % 10 == 0){ // 전체 페이지 계산
-                pages = totalItem / 10;
-            }else{  pages = totalItem / 10 + 1; }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        addNumItem(adapter);
 
         recyclerView.setAdapter(adapter);
 
@@ -55,7 +55,6 @@ public class WinningHistoryActivity extends AppCompatActivity {
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
             }
-
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
@@ -63,26 +62,16 @@ public class WinningHistoryActivity extends AppCompatActivity {
                 int lastPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
                 int totalCount = recyclerView.getAdapter().getItemCount();
 
-                if(lastPosition == totalCount){
+                if(lastPosition == totalCount -1 ){
                     //아이템 추가 ! 입맛에 맞게 설정하시면됩니다.
-                    //
+                    addNumItem(adapter);
                     adapter.notifyDataSetChanged();}
             }
         });
     }
 
-    private void initLoadDB() throws SQLException {
-
-        DataAdapter mDbHelper = new DataAdapter(getApplicationContext());
-        mDbHelper.open();
-
-        // db에 있는 값들을 model을 적용해서 넣는다.
-        winningNumberList = mDbHelper.getLottoData();
-
-        // db 닫기
-        mDbHelper.close();
-    }
     public void addNumItem(WinningNumAdapter adapter){
+
         int start = page * 10;
         int end;
 
@@ -91,9 +80,12 @@ public class WinningHistoryActivity extends AppCompatActivity {
         }else{
             end = (page + 1) * 10;
         }
+        Log.d("오류확인용 ㅋ",start + ", " + end);
+
         for(int i = start; i < end; i++){
             adapter.addItem(winningNumberList.get(i));
         }
+        page ++;
 
     }
 }

@@ -9,9 +9,9 @@ public class WinningNumber {
     int even; // 짝수만 지정하고 홀수는 6 - even 으로 코딩
 
     public WinningNumber() {
-        this.round = 0;
-        this.total = 0;
-        this.even = 0;
+        round = 0;
+        total = 0;
+        even = 0;
     }
 
     public WinningNumber(int round, String date, int[] winningNums) {
@@ -30,6 +30,7 @@ public class WinningNumber {
 
 
     public int getTotal() {
+        total = 0;
         for(int i = 0; i < 6; i++){
             total += winningNums[i];
         }
@@ -37,6 +38,7 @@ public class WinningNumber {
     }
 
     public int getEven() {
+        even = 0;
         for(int i = 0; i < 6; i++){
             if(winningNums[i] % 2 ==0){
                 even ++;
@@ -67,10 +69,13 @@ public class WinningNumber {
     public String numberString(){ // 당첨번호 보너스를 제외한 6개를 붙인 문자열
 
         StringBuilder sb = new StringBuilder(); // well estimated buffer
+
         for (int num : winningNums) {
             if (sb.length() > 0)
                 sb.append(" ");
-            sb.append(num);
+            if(num != winningNums[6]){
+                sb.append(num);
+            }
         }
         return sb.toString();
     }

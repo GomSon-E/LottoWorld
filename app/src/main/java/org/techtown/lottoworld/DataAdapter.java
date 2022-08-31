@@ -15,7 +15,7 @@ public class DataAdapter
     protected static final String TAG = "DataAdapter";
 
     // TODO : TABLE 이름을 명시해야함
-    protected static final String TABLE_NAME = "lotto_data";
+    protected static final String TABLE_NAME = "tb_lotto_list";
 
     private final Context mContext;
     private SQLiteDatabase mDb;
@@ -47,7 +47,7 @@ public class DataAdapter
         mDbHelper.close();
     }
 
-    public List getLottoData()
+    public List getWinningData()
     {
         try
         {
