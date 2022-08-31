@@ -28,12 +28,13 @@ public class IntroActivity extends AppCompatActivity {
                 //MainActivity 로 넘어가도록 함
                 loadDB();
 
+
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
             //2초 딜레이 후 Runner 객체 실행
-        },2000);
+        },1500);
     }
 
     @Override
