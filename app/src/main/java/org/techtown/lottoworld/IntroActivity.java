@@ -7,8 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class IntroActivity extends AppCompatActivity {
 
+    static public List<WinningNumber> winningNumberList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +26,8 @@ public class IntroActivity extends AppCompatActivity {
             public void run() {
                 //인트로를 보여준 후 intent 를 사용해서
                 //MainActivity 로 넘어가도록 함
+                loadDB();
+
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
@@ -33,5 +41,19 @@ public class IntroActivity extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         finish();
+    }
+    public void loadDB(){
+        try {
+            DataAdapter mDbHelper = new DataAdapter(getApplicationContext());
+            mDbHelper.open();
+
+            // db에 있는 값들을 model을 적용해서 넣는다.
+            winningNumberList = mDbHelper.getWinningData();
+            Collections.reverse(winningNumberList);
+            // db 닫기
+            mDbHelper.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
