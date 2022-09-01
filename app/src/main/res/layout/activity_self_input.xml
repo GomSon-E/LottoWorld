@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="reset"
+        android:text="@string/reset_selfInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,8 @@
     <Spinner
         android:id="@+id/roundSpinner"
         android:layout_width="160dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/spinnerborder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -34,8 +34,8 @@
         android:id="@+id/myTicketListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="구입목록"
+        android:layout_marginBottom="16dp"
+        android:text="@string/purchaseHistory_selfInput"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -45,11 +45,518 @@
         android:id="@+id/SaveTicketButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="저장하기"
+        android:layout_marginBottom="16dp"
+        android:text="@string/save_selfInput"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/myTicketListButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TableLayout
+        android:id="@+id/selfInputTable"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundSpinner"
+        app:layout_constraintVertical_bias="0.144">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_1"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_2"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_3"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_4"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_5"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_6"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_7"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_8"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_9"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_10"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_11"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_12"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_13"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_14"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_15"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_16"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_17"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_18"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_19"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_20"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button21"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_21"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button22"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_22"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button23"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_23"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_24"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button25"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_25"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button26"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_26"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button27"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_27"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button28"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_28"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button29"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_29"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button30"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_30"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button31"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_31"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button32"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_32"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button33"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_33"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button34"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_34"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button35"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_35"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button36"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_36"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button37"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_37"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button38"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_38"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button39"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_39"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button40"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_40"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button41"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_41"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button42"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:text="@string/table_42"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button43"
+                android:layout_width="44dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:padding="0dp"
+                android:text="@string/table_43"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button44"
+                android:layout_width="44dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:padding="0dp"
+                android:text="@string/table_44"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button45"
+                android:layout_width="44dp"
+                android:layout_height="52dp"
+                android:layout_margin="4dp"
+                android:padding="0dp"
+                android:text="@string/table_45"
+                tools:ignore="TouchTargetSizeCheck" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

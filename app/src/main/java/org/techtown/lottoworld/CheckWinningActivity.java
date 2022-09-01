@@ -9,8 +9,6 @@ import android.widget.Button;
 
 public class CheckWinningActivity extends AppCompatActivity {
 
-    //Todo : 아직 메인화면이랑 버튼연동 못한 상태
-
     Button qrCheckButton,selfInputButton,purchaseHistoryButton;
 
     @Override
@@ -25,6 +23,22 @@ public class CheckWinningActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), QrCheckingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        selfInputButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SelfInputActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        purchaseHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PurchaseHistoryActivity.class);
                 startActivity(intent);
             }
         });
