@@ -30,6 +30,9 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".WinningNumPage"
+            android:exported="false" />
+        <activity
             android:name=".IntroActivity"
             android:exported="true"
             android:screenOrientation="portrait">
