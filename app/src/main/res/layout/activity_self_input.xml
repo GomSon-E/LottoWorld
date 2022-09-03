@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:backgroundTint="#BC7474"
     tools:context=".SelfInputActivity">
 
@@ -88,6 +89,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_1"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -98,6 +103,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_2"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -108,6 +117,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_3"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -118,6 +131,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_4"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -128,6 +145,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_5"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -138,6 +159,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_6"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -148,6 +173,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_7"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
@@ -163,6 +192,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_8"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -173,6 +206,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_9"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -183,6 +220,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_10"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -193,6 +234,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_11"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -203,6 +248,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_12"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -213,6 +262,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_13"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -223,6 +276,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_14"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
@@ -238,6 +295,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_15"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -248,6 +309,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_16"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -258,6 +323,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_17"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -268,6 +337,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_18"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -278,6 +351,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_19"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -288,6 +365,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_20"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -298,6 +379,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_21"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
@@ -313,6 +398,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_22"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -323,6 +412,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_23"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -333,6 +426,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_24"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -343,6 +440,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_25"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -353,6 +454,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_26"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -363,6 +468,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_27"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -373,6 +482,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_28"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
@@ -388,6 +501,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_29"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -398,6 +515,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_30"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -408,6 +529,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_31"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -418,6 +543,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_32"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -428,6 +557,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_33"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -438,6 +571,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_34"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -448,6 +585,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_35"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
@@ -463,6 +604,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_36"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -473,6 +618,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_37"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -483,6 +632,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_38"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -493,6 +646,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_39"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -503,6 +660,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_40"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -513,6 +674,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_41"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -523,6 +688,10 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 android:text="@string/table_42"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
 
@@ -537,6 +706,10 @@
                 android:layout_margin="4dp"
                 android:padding="0dp"
                 android:text="@string/table_43"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -546,6 +719,10 @@
                 android:layout_margin="4dp"
                 android:padding="0dp"
                 android:text="@string/table_44"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -555,8 +732,102 @@
                 android:layout_margin="4dp"
                 android:padding="0dp"
                 android:text="@string/table_45"
+                android:textColor="#FE2E2E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="@drawable/selfinputbutton"
                 tools:ignore="TouchTargetSizeCheck" />
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/choosenBall3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#C85B5B"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/choosenBall4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/choosenBall2"
+        app:layout_constraintTop_toBottomOf="@+id/selfInputTable" />
+
+    <TextView
+        android:id="@+id/choosenBall6"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#C85B5B"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/choosenBall5"
+        app:layout_constraintTop_toBottomOf="@+id/selfInputTable" />
+
+    <TextView
+        android:id="@+id/choosenBall5"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#C85B5B"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/choosenBall6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/choosenBall4"
+        app:layout_constraintTop_toBottomOf="@+id/selfInputTable" />
+
+    <TextView
+        android:id="@+id/choosenBall2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#C85B5B"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/choosenBall3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/choosenBall1"
+        app:layout_constraintTop_toBottomOf="@+id/selfInputTable" />
+
+    <TextView
+        android:id="@+id/choosenBall1"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#C85B5B"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/choosenBall2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selfInputTable" />
+
+    <TextView
+        android:id="@+id/choosenBall4"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_view"
+        android:backgroundTint="#C85B5B"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/choosenBall5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/choosenBall3"
+        app:layout_constraintTop_toBottomOf="@+id/selfInputTable" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
