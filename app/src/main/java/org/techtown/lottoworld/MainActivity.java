@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
     //Todo : 버튼 온클릭 이벤트 -> 액티비티 넘어가게끔
     // 최신회차 숫자
 
-    String lottoRound_Latest;
-    String tempz = "";
+    public int lottoRound_Latest = 1029;
     // 최신회차 당첨번호 6개 배열 + 보너스넘버 1개
     String[] winningNumbers_Main = new String[7];
     JsonObject jsonObject;
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Todo : 일단 예시로 1029 넣어둠 최신회차로 변경해야됨
         viewMatching();
-        getLottoApi("1029");
+        getLottoApi(Integer.toString(lottoRound_Latest));
         buttonIntentMatching();
     }
 
@@ -64,12 +63,10 @@ public class MainActivity extends AppCompatActivity {
         }
         String[] winningNumber_ParsingIndex = {"drwtNo1","drwtNo2","drwtNo3","drwtNo4","drwtNo5","drwtNo6","bnusNo"};
 
-        lottoRound_Latest = roundNumber;
-        String url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=" + lottoRound_Latest;
+        String url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=" + roundNumber;
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.d("Taglog",tempz);
                 jsonObject = (JsonObject) JsonParser.parseString(response);
                 for (int i = 0; i < 7; i++) {
                     winningNumbers_Main[i] = "" + jsonObject.get(winningNumber_ParsingIndex[i]);

@@ -71,7 +71,8 @@ public class WinningNumAdapter extends RecyclerView.Adapter<WinningNumAdapter.Vi
 
             round.setText(roundT);
             winningNums.setText(item.numberString());
-            bonusNum.setText(String.valueOf(item.getWinningNums()[6]));
+            bonusNum.setText(Integer.toString(item.getWinningNums()[6]));
+
             statics.setText(staticT);
         }
 

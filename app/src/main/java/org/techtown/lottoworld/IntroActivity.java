@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
+import java.util.ArrayList;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Collections;
@@ -15,6 +15,7 @@ import java.util.List;
 public class IntroActivity extends AppCompatActivity {
 
     static public List<WinningNumber> winningNumberList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
