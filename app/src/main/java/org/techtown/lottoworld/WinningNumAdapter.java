@@ -66,11 +66,13 @@ public class WinningNumAdapter extends RecyclerView.Adapter<WinningNumAdapter.Vi
         }
         public void setItem(WinningNumber item) {
             String roundT = item.getRound() + "회 당첨번호";
-            String staticT = "총합:" + item.getTotal() + " 짝홀:" + item.getEven() + "/" + item.getOdd();
+            String staticT = "총합:" + item.getTotal() + " 짝홀:" + item.getEven() + "/" +  (6 - item.getEven());
+
 
             round.setText(roundT);
             winningNums.setText(item.numberString());
             bonusNum.setText(Integer.toString(item.getWinningNums()[6]));
+
             statics.setText(staticT);
         }
 

@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
          winningHistory.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent intent = new Intent(getApplicationContext(), WinningNumPage.class);
+                 Intent intent = new Intent(getApplicationContext(), WinningHistoryActivity.class);
                  startActivity(intent);
              }
          });

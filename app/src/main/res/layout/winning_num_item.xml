@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/border"
+    android:background="@drawable/winning_border"
     android:orientation="vertical">
 
     <LinearLayout
@@ -33,16 +33,16 @@
         android:padding="8dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
             android:padding="2dp">
 
             <TextView
                 android:id="@+id/winningNums"
-                android:layout_width="42dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:text="5 7 12 13 18 35"
                 android:textAlignment="textEnd"
                 android:textColor="#000000"
@@ -52,7 +52,6 @@
                 android:id="@+id/bonusNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
                 android:paddingLeft="3dp"
                 android:text="23"
                 android:textColor="#000000" />
