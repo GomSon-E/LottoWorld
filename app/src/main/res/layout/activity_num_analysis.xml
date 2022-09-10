@@ -87,6 +87,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="340dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:itemCount="8"
+        tools:listitem="@layout/recycler_view_item" />
 
 </LinearLayout>

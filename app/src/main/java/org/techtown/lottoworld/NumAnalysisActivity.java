@@ -3,16 +3,19 @@ package org.techtown.lottoworld;
 import static org.techtown.lottoworld.IntroActivity.winningNumberList;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class NumAnalysisActivity extends AppCompatActivity {
@@ -25,11 +28,32 @@ public class NumAnalysisActivity extends AppCompatActivity {
     TextView total;
     TextView even;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_num_analysis);
+
+        int[] nums = {5, 16, 28, 30, 35, 45, -1};
+
+
+        winningNum = findViewById(R.id.winningNum);
+        total = findViewById(R.id.total);
+        even = findViewById(R.id.analysis);
+
+        WinningNumber winningNumber = new WinningNumber();
+        winningNumber.setWinningNums(nums);
+
+
+
+        total.setText("총합:" + winningNumber.getTotal());
+        even.setText("짝홀:" + winningNumber.getEven()+"/"+( 6 - winningNumber.getEven()) );
+        winningNum.setText(winningNumber.numberString());
+
+        //history 리스트를 만들음
+        compareNums(nums);
+        Collections.sort(historyList);
 
         totalItem = historyList.size();
 
@@ -37,35 +61,19 @@ public class NumAnalysisActivity extends AppCompatActivity {
             pages = totalItem / 10;
         }else{  pages = totalItem / 10 + 1; }
 
-        int[] nums = {5, 16, 28, 30, 35, 45, -1};
 
-
-        winningNum = findViewById(R.id.winningNum);
-
-        WinningNumber winningNumber = new WinningNumber();
-        winningNumber.setWinningNums(nums);
-
-        total = findViewById(R.id.total);
-        even = findViewById(R.id.analysis);
-        total.setText("총합:" + winningNumber.getTotal());
-        even.setText("짝홀:" + winningNumber.getEven()+"/"+( 6 - winningNumber.getEven()) );
-        winningNum.setText(winningNumber.numberString());
-
-        //history 리스트를 만들음
-        compareNums(nums);
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView2);
+        RecyclerView recyclerView2 = findViewById(R.id.recyclerView2);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView2.setLayoutManager(layoutManager);
 
         NumAnalysisAdapter adapter = new NumAnalysisAdapter();
 
         addNumItem(adapter);
 
-        recyclerView.setAdapter(adapter);
+        recyclerView2.setAdapter(adapter);
 
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        recyclerView2.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -78,7 +86,7 @@ public class NumAnalysisActivity extends AppCompatActivity {
                 int totalCount = recyclerView.getAdapter().getItemCount();
 
                 if(lastPosition == totalCount -1 ){
-                    //아이템 추가 ! 입맛에 맞게 설정하시면됩니다.
+                    //아이템 추가!
                     addNumItem(adapter);
                     adapter.notifyDataSetChanged();}
             }
@@ -108,32 +116,26 @@ public class NumAnalysisActivity extends AppCompatActivity {
             }
             setRank(cnt, wNum, nums);
         }
-
     }
     public void setRank(int cnt, WinningNumber wNum,int[] nums ){ // 등수 지정해주는 메소드
 
         switch(cnt){
             case 6 : // 6개 다 맞을 때 1등
                 historyList.add(new WinningHistory(wNum, 1));
-                Log.d("1등", cnt + "개 맞음");
                 break;
             case 5: // 보너스 번호를 포함한 경우 2등, 아 경우 3등
                 if(Arrays.asList(nums).contains(wNum.getWinningNums()[6])){
                     historyList.add(new WinningHistory(wNum, 2));
-                    Log.d("2등", cnt + "개 맞음");
                 }
                 else{
                     historyList.add(new WinningHistory(wNum, 3));
-                    Log.d("3등", cnt + "개 맞음");
                 }
                 break;
             case 4:// 4개를 맞춘 경우 4등
                 historyList.add(new WinningHistory(wNum, 4));
-                Log.d("4등", cnt + "개 맞음");
                 break;
             case 3: // 3개를 맞춘 경우 5등
                 historyList.add(new WinningHistory(wNum, 5));
-                Log.d("5등", cnt + "개 맞음");
                 break;
             default:
                 break;
@@ -150,10 +152,10 @@ public class NumAnalysisActivity extends AppCompatActivity {
         }else{
             end = (page + 1) * 10;
         }
-        Log.d("오류확인용 ㅋ",start + ", " + end);
 
         for(int i = start; i < end; i++){
             adapter.addItem(historyList.get(i));
+
         }
         page ++;
 
