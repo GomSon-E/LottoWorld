@@ -29,12 +29,11 @@ public class IntroActivity extends AppCompatActivity {
                 //MainActivity 로 넘어가도록 함
                 loadDB();
 
-
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
-            //2초 딜레이 후 Runner 객체 실행
+            //1.5초 딜레이 후 Runner 객체 실행
         },1500);
     }
 
@@ -43,16 +42,17 @@ public class IntroActivity extends AppCompatActivity {
         super.onPause();
         finish();
     }
+
     public void loadDB(){
         try {
-            DataAdapter mDbHelper = new DataAdapter(getApplicationContext());
-            mDbHelper.open();
-
+            // mDbHelper -> mDbAdapter 로 변경
+            DataAdapter mDbAdapter = new DataAdapter(getApplicationContext());
+            mDbAdapter.open();
             // db에 있는 값들을 model을 적용해서 넣는다.
-            winningNumberList = mDbHelper.getWinningData();
+            winningNumberList = mDbAdapter.getWinningData();
             Collections.reverse(winningNumberList);
             // db 닫기
-            mDbHelper.close();
+            mDbAdapter.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

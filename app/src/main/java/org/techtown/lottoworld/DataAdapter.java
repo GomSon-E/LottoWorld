@@ -12,14 +12,14 @@ import java.util.List;
 
 public class DataAdapter
 {
-    protected static final String TAG = "DataAdapter";
+    // 2022 09 12 변수 접근제한 권한 private -> public 수정
 
-    // TODO : TABLE 이름을 명시해야함
-    protected static final String TABLE_NAME = "tb_lotto_list";
+    public static final String TAG = "DataAdapter";
+    public static final String TABLE_NAME = "tb_lotto_list";
 
-    private final Context mContext;
-    private SQLiteDatabase mDb;
-    private DataBaseHelper mDbHelper;
+    public final Context mContext;
+    public SQLiteDatabase mDb;
+    public DataBaseHelper mDbHelper;
 
     public DataAdapter(Context context)
     {
@@ -95,5 +95,4 @@ public class DataAdapter
             throw mSQLException;
         }
     }
-
 }
