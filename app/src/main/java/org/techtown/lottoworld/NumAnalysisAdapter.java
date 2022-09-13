@@ -58,9 +58,9 @@ public class NumAnalysisAdapter extends RecyclerView.Adapter<NumAnalysisAdapter.
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            round = itemView.findViewById(R.id.round);
-            winningNums = itemView.findViewById(R.id.winningNums);
-            bonusNum = itemView.findViewById(R.id.bonusNum);
+            round = itemView.findViewById(R.id.hRound);
+            winningNums = itemView.findViewById(R.id.hWinningNums);
+            bonusNum = itemView.findViewById(R.id.hBonusNum);
             rank = itemView.findViewById(R.id.rank);
 
         }
@@ -70,8 +70,8 @@ public class NumAnalysisAdapter extends RecyclerView.Adapter<NumAnalysisAdapter.
 
             round.setText(roundT);
             winningNums.setText(winningNumber.numberString());
-            bonusNum.setText(String.valueOf(winningNumber.getWinningNums()[6]));
-            rank.setText(item.getRank());
+            bonusNum.setText(Integer.toString(winningNumber.getWinningNums()[6]));
+            rank.setText(Integer.toString(item.getRank()));
         }
 
     }
