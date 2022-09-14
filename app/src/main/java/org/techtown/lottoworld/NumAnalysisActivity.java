@@ -8,15 +8,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class NumAnalysisActivity extends AppCompatActivity {
     int pages; // 전체 페이지 수
@@ -24,9 +33,17 @@ public class NumAnalysisActivity extends AppCompatActivity {
     int page = 0; // 현재 페이지
 
     List<WinningHistory> historyList = new ArrayList<>();
+    List<WinningNumber> first = new ArrayList<>();
+    List<WinningNumber> second = new ArrayList<>();
+    List<WinningNumber> third = new ArrayList<>();
+    List<WinningNumber> fourth = new ArrayList<>();
+    List<WinningNumber> fifth = new ArrayList<>();
+
     TextView winningNum;
     TextView total;
     TextView even;
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -35,8 +52,8 @@ public class NumAnalysisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_num_analysis);
 
+        // 번호를 불러오는 코드로 대체될 예정
         int[] nums = {5, 16, 28, 30, 35, 45, -1};
-
 
         winningNum = findViewById(R.id.winningNum);
         total = findViewById(R.id.total);
@@ -45,7 +62,9 @@ public class NumAnalysisActivity extends AppCompatActivity {
         WinningNumber winningNumber = new WinningNumber();
         winningNumber.setWinningNums(nums);
 
-
+        Date dateNow = Calendar.getInstance().getTime();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd", Locale.getDefault());
+        String date = format.format(dateNow);
 
         total.setText("총합:" + winningNumber.getTotal());
         even.setText("짝홀:" + winningNumber.getEven()+"/"+( 6 - winningNumber.getEven()) );
@@ -53,7 +72,7 @@ public class NumAnalysisActivity extends AppCompatActivity {
 
         //history 리스트를 만들음
         compareNums(nums);
-        Collections.sort(historyList);
+        addWinningNums();
 
         totalItem = historyList.size();
 
@@ -61,6 +80,14 @@ public class NumAnalysisActivity extends AppCompatActivity {
             pages = totalItem / 10;
         }else{  pages = totalItem / 10 + 1; }
 
+
+        Button saveButton = findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertData(date,winningNumber);
+            }
+        });
 
         RecyclerView recyclerView2 = findViewById(R.id.recyclerView2);
 
@@ -92,6 +119,7 @@ public class NumAnalysisActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     public void compareNums(int[] nums){
@@ -121,25 +149,31 @@ public class NumAnalysisActivity extends AppCompatActivity {
 
         switch(cnt){
             case 6 : // 6개 다 맞을 때 1등
-                historyList.add(new WinningHistory(wNum, 1));
+                first.add(wNum);
                 break;
             case 5: // 보너스 번호를 포함한 경우 2등, 아 경우 3등
                 if(Arrays.asList(nums).contains(wNum.getWinningNums()[6])){
-                    historyList.add(new WinningHistory(wNum, 2));
+                    second.add(wNum);
                 }
                 else{
-                    historyList.add(new WinningHistory(wNum, 3));
+                    third.add(wNum);
                 }
                 break;
             case 4:// 4개를 맞춘 경우 4등
-                historyList.add(new WinningHistory(wNum, 4));
+                fourth.add(wNum);
                 break;
             case 3: // 3개를 맞춘 경우 5등
-                historyList.add(new WinningHistory(wNum, 5));
+                fifth.add(wNum);
                 break;
             default:
                 break;
         }
+        // 각각의 등수들 회차 빠른 순으로 정렬
+        Collections.sort(first);
+        Collections.sort(second);
+        Collections.sort(third);
+        Collections.sort(fourth);
+        Collections.sort(fifth);
     }
 
     public void addNumItem(NumAnalysisAdapter adapter){
@@ -159,5 +193,37 @@ public class NumAnalysisActivity extends AppCompatActivity {
         }
         page ++;
 
+    }
+    public void addWinningNums(){
+        for(WinningNumber wn : first){
+            historyList.add(new WinningHistory(wn,1));
+        }
+        for(WinningNumber wn : second){
+            historyList.add(new WinningHistory(wn,2));
+        }
+        for(WinningNumber wn : third){
+            historyList.add(new WinningHistory(wn,3));
+        }
+        for(WinningNumber wn : fourth){
+            historyList.add(new WinningHistory(wn,4));
+        }
+        for(WinningNumber wn : fifth){
+            historyList.add(new WinningHistory(wn,5));
+        }
+    }
+    public void insertData(String date, WinningNumber wn){
+        try {
+            DataAdapter mDbAdapter = new DataAdapter(getApplicationContext());
+            mDbAdapter.open();
+
+            mDbAdapter.insertWinningNum(date, wn);
+
+            // db 닫기
+            mDbAdapter.close();
+            Log.d("insertData", "성공함");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Log.d("insertData", "실패함");
+        }
     }
 }

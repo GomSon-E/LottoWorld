@@ -1,12 +1,24 @@
 package org.techtown.lottoworld;
 
-public class WinningNumber {
+public class WinningNumber implements Comparable<WinningNumber>{
     int round;//회차
     String date;// 당첨일
 
     int[] winningNums = new int[7]; // 보너스 넘버까지 7개
     int total;
     int even; // 짝수만 지정하고 홀수는 6 - even 으로 코딩
+
+    @Override
+    public int compareTo(WinningNumber winningNumber) {
+        if (winningNumber.round > round) {
+            return 1;
+        }
+        else if (winningNumber.round < round) {
+            return -1;
+        }
+        return 0;
+
+    }
 
     public WinningNumber() {
         round = 0;
@@ -79,5 +91,6 @@ public class WinningNumber {
         }
         return sb.toString();
     }
+
 
 }
