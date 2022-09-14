@@ -66,7 +66,7 @@ public class NumAnalysisAdapter extends RecyclerView.Adapter<NumAnalysisAdapter.
         }
         public void setItem(WinningHistory item) {
             WinningNumber winningNumber = item.getWinningNumber();
-            String roundT = winningNumber.getRound() + "회 당첨번호";
+            String roundT = winningNumber.getRound() + "회";
 
             round.setText(roundT);
             winningNums.setText(winningNumber.numberString());
