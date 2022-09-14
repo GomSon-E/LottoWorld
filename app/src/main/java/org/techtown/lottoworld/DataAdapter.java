@@ -32,7 +32,6 @@ public class DataAdapter
         {
             mDbHelper.openDataBase();
             mDbHelper.close();
-            mDb = mDbHelper.getReadableDatabase();
         }
         catch (SQLException | java.sql.SQLException mSQLException)
         {
@@ -51,6 +50,7 @@ public class DataAdapter
     {
         try
         {
+            mDb = mDbHelper.getReadableDatabase();
             // Table 이름 -> antpool_bitcoin 불러오기
             String sql ="SELECT * FROM " + TABLE_NAME;
 
@@ -96,4 +96,20 @@ public class DataAdapter
         }
     }
 
+    public void insertWinningNum(String date, WinningNumber wn){
+        mDb = mDbHelper.getWritableDatabase();
+        int[] nums = wn.getWinningNums();
+        String query = "INSERT INTO  tb_lotto_made"
+                + " (date, first, second, third, fourth, fifth, sixth) "
+                + " VALUES ("
+                + " '" + date + "', "
+                + nums[0] + ", "
+                + nums[1] + ", "
+                + nums[2] + ", "
+                + nums[3] + ", "
+                + nums[4] + ", "
+                + nums[5] + "); ";
+        Log.d("insertWinningNum" , query);
+        mDb.execSQL(query);
+    }
 }

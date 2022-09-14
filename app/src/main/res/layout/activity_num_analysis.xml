@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:text="번호분석"
-        android:textSize="38sp" />
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/winningNum"
@@ -49,7 +49,7 @@
                 android:layout_gravity="center_horizontal"
                 android:padding="4dp"
                 android:text="총합: 151"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 tools:textAlignment="center" />
 
         </LinearLayout>
@@ -71,7 +71,7 @@
                 android:padding="4dp"
                 android:text="홀:4/2"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -87,8 +87,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="340dp"
-        android:layout_height="match_parent"
+        android:layout_height="420dp"
         tools:itemCount="8"
         tools:listitem="@layout/recycler_view_item" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장하기" />
 
 </LinearLayout>
