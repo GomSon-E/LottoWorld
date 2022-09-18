@@ -65,12 +65,12 @@ public class NumAnalysisAdapter extends RecyclerView.Adapter<NumAnalysisAdapter.
 
         }
         public void setItem(WinningHistory item) {
-            WinningNumber winningNumber = item.getWinningNumber();
-            String roundT = winningNumber.getRound() + "회";
+            NumberQuery numberQuery = item.getWinningNumber();
+            String roundT = numberQuery.getRound() + "회";
 
             round.setText(roundT);
-            winningNums.setText(winningNumber.numberString());
-            bonusNum.setText(Integer.toString(winningNumber.getWinningNums()[6]));
+            winningNums.setText(numberQuery.numberString());
+            bonusNum.setText(Integer.toString(numberQuery.getNums()[6]));
             rank.setText(Integer.toString(item.getRank()));
         }
 
