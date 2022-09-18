@@ -1,6 +1,6 @@
 package org.techtown.lottoworld;
 
-import static org.techtown.lottoworld.IntroActivity.winningNumberList;
+import static org.techtown.lottoworld.IntroActivity.numberQueryList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -8,16 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Objects;
 
 public class WinningHistoryActivity extends AppCompatActivity {
     int pages; // 전체 페이지 수
@@ -40,7 +33,7 @@ public class WinningHistoryActivity extends AppCompatActivity {
         WinningNumAdapter adapter = new WinningNumAdapter();
 
 
-        totalItem = winningNumberList.size();
+        totalItem = numberQueryList.size();
 
         if(totalItem % 10 == 0){ // 전체 페이지 계산
             pages = totalItem / 10;
@@ -83,7 +76,7 @@ public class WinningHistoryActivity extends AppCompatActivity {
         Log.d("오류확인용 ㅋ",start + ", " + end);
 
         for(int i = start; i < end; i++){
-            adapter.addItem(winningNumberList.get(i));
+            adapter.addItem(numberQueryList.get(i));
         }
         page ++;
 

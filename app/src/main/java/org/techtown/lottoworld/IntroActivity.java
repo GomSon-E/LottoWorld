@@ -6,15 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import java.util.ArrayList;
+
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
 
-    static public List<WinningNumber> winningNumberList;
+    static public List<NumberQuery> numberQueryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
                 finish();
             }
             //1.5초 딜레이 후 Runner 객체 실행
-        },1500);
+        },2000);
     }
 
     @Override
@@ -45,12 +44,11 @@ public class IntroActivity extends AppCompatActivity {
 
     public void loadDB(){
         try {
-            // mDbHelper -> mDbAdapter 로 변경
             DataAdapter mDbAdapter = new DataAdapter(getApplicationContext());
             mDbAdapter.open();
             // db에 있는 값들을 model을 적용해서 넣는다.
-            winningNumberList = mDbAdapter.getWinningData();
-            Collections.reverse(winningNumberList);
+            numberQueryList = mDbAdapter.getWinningData();
+            Collections.reverse(numberQueryList);
             // db 닫기
             mDbAdapter.close();
         } catch (SQLException e) {

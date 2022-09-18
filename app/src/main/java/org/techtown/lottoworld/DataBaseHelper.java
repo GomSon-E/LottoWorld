@@ -21,13 +21,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase mDataBase;
     private Context mContext;
 
-    // DATABASE_VERSION = 회차 / DB 버전
-    public static int DATABASE_VERSION = 1029;
-    public static String PURCHASE_HISTORY_TABLE_NAME = "purchase_history_table";
-
     public DataBaseHelper(Context context)
     {
-        super(context, DB_NAME, null, DATABASE_VERSION);
+        super(context, DB_NAME, null, 1);
 
         DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         this.mContext = context;
@@ -74,44 +70,36 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }
     }
-
     //데이터베이스를 열어서 쿼리를 쓸수있게만든다.
     public boolean openDataBase() throws SQLException
     {
         String mPath = DB_PATH + DB_NAME;
-
+        //Log.v("mPath", mPath);
         mDataBase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.CREATE_IF_NECESSARY);
         //mDataBase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS);
-        Log.d("openDataBase", mPath);
-        Log.d("openDataBase", "did");
         return mDataBase != null;
     }
 
+    @Override
+    public synchronized void close()
+    {
+        if (mDataBase != null)
+        {
+            mDataBase.close();
+        }
+        super.close();
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db)
     {
 
-        Log.d(TAG,"onCreate() : DB Creating!");
     }
 
     @Override
     public void onOpen(SQLiteDatabase db)
     {
         super.onOpen(db);
-        // CHECK WINNING - PURCHASE HISTORY TABLE 생성
-        // round = 회차, rank = 순위, 1st~6th = 로또번호 인덱스
-        String query =
-                "CREATE TABLE IF NOT EXISTS " + PURCHASE_HISTORY_TABLE_NAME + " (" +
-                        "round "     + "INTEGER," +
-                        "rank"       + "INTEGER," +
-                        "1st"        + "INTEGER," +
-                        "2nd"        + "INTEGER," +
-                        "3rd"        + "INTEGER," +
-                        "4th"        + "INTEGER," +
-                        "5th"        + "INTEGER," +
-                        "6th"        + "INTEGER"  + ")";
-
         Log.d(TAG,"onOpen() : DB Opening!");
     }
 
@@ -120,17 +108,4 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     {
         Log.d(TAG,"onUpgrade() : DB Schema Modified and Excuting onCreate()");
     }
-
-    @Override
-    public synchronized void close()
-    {
-
-        Log.d(TAG,"close() : DBhelper closed");
-        if (mDataBase != null)
-        {
-            mDataBase.close();
-        }
-        super.close();
-    }
-
 }
