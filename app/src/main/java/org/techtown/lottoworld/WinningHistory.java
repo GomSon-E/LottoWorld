@@ -1,20 +1,20 @@
 package org.techtown.lottoworld;
 
 public class WinningHistory{
-    WinningNumber winningNumber;
+    NumberQuery numberQuery;
     int rank;
 
-    public WinningHistory(WinningNumber winningNumber, int rank) {
-        this.winningNumber = winningNumber;
+    public WinningHistory(NumberQuery numberQuery, int rank) {
+        this.numberQuery = numberQuery;
         this.rank = rank;
     }
 
-    public WinningNumber getWinningNumber() {
-        return winningNumber;
+    public NumberQuery getWinningNumber() {
+        return numberQuery;
     }
 
-    public void setWinningNumber(WinningNumber winningNumber) {
-        this.winningNumber = winningNumber;
+    public void setWinningNumber(NumberQuery numberQuery) {
+        this.numberQuery = numberQuery;
     }
 
     public int getRank() {

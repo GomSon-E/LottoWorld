@@ -6,7 +6,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +57,7 @@ public class DataAdapter
             List winningList = new ArrayList();
 
             // TODO : 모델 선언
-            WinningNumber winningNumber = null;
+            NumberQuery numberQuery = null;
 
             Cursor mCur = mDb.rawQuery(sql, null);
             if (mCur!=null)
@@ -67,12 +66,12 @@ public class DataAdapter
                 while( mCur.moveToNext() ) {
 
                     // TODO : 커스텀 모델 생성
-                    winningNumber = new WinningNumber();
+                    numberQuery = new NumberQuery();
 
                     // TODO : Record 기술
                     // round, date, 1st, 2nd, 3rd, 4th, 5th, 6th, bonus
-                    winningNumber.setRound(mCur.getInt(0));
-                    winningNumber.setDate(mCur.getString(1));
+                    numberQuery.setRound(mCur.getInt(0));
+                    numberQuery.setDate(mCur.getString(1));
                     int first = mCur.getInt(2);
                     int second = mCur.getInt(3);
                     int third = mCur.getInt(4);
@@ -80,10 +79,10 @@ public class DataAdapter
                     int fifth = mCur.getInt(6);
                     int sixth = mCur.getInt(7);
                     int bonus = mCur.getInt(8);
-                    winningNumber.setWinningNums(new int[]{first,second,third,fourth,fifth,sixth,bonus});
+                    numberQuery.setNums(new int[]{first,second,third,fourth,fifth,sixth,bonus});
 
                     // 리스트에 넣기
-                    winningList.add(winningNumber);
+                    winningList.add(numberQuery);
                 }
 
             }
@@ -96,9 +95,9 @@ public class DataAdapter
         }
     }
 
-    public void insertWinningNum(String date, WinningNumber wn){
+    public void insertWinningNum(String date, NumberQuery wn){
         mDb = mDbHelper.getWritableDatabase();
-        int[] nums = wn.getWinningNums();
+        int[] nums = wn.getNums();
         String query = "INSERT INTO  tb_lotto_made"
                 + " (date, first, second, third, fourth, fifth, sixth) "
                 + " VALUES ("

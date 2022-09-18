@@ -1,50 +1,50 @@
 package org.techtown.lottoworld;
 
-public class WinningNumber implements Comparable<WinningNumber>{
+public class NumberQuery implements Comparable<NumberQuery>{
     int round;//회차
     String date;// 당첨일
 
-    int[] winningNums = new int[7]; // 보너스 넘버까지 7개
+    int[] nums = new int[7]; // 보너스 넘버까지 7개
     int total;
     int even; // 짝수만 지정하고 홀수는 6 - even 으로 코딩
 
     @Override
-    public int compareTo(WinningNumber winningNumber) {
-        if (winningNumber.round > round) {
+    public int compareTo(NumberQuery numberQuery) {
+        if (numberQuery.round > round) {
             return 1;
         }
-        else if (winningNumber.round < round) {
+        else if (numberQuery.round < round) {
             return -1;
         }
         return 0;
 
     }
 
-    public WinningNumber() {
+    public NumberQuery() {
         round = 0;
         total = 0;
         even = 0;
     }
 
-    public WinningNumber(int round, String date, int[] winningNums) {
+    public NumberQuery(int round, String date, int[] nums) {
         this.round = round;
         this.date = date;
-        this.winningNums = winningNums;
+        this.nums = nums;
     }
 
-    public int[] getWinningNums() {
-        return winningNums;
+    public int[] getNums() {
+        return nums;
     }
 
-    public void setWinningNums(int[] winningNums) {
-        this.winningNums = winningNums;
+    public void setNums(int[] nums) {
+        this.nums = nums;
     }
 
 
     public int getTotal() {
         total = 0;
         for(int i = 0; i < 6; i++){
-            total += winningNums[i];
+            total += nums[i];
         }
         return total;
     }
@@ -52,7 +52,7 @@ public class WinningNumber implements Comparable<WinningNumber>{
     public int getEven() {
         even = 0;
         for(int i = 0; i < 6; i++){
-            if(winningNums[i] % 2 ==0){
+            if(nums[i] % 2 ==0){
                 even ++;
             }
         }
@@ -82,10 +82,10 @@ public class WinningNumber implements Comparable<WinningNumber>{
 
         StringBuilder sb = new StringBuilder(); // well estimated buffer
 
-        for (int num : winningNums) {
+        for (int num : nums) {
             if (sb.length() > 0)
                 sb.append(" ");
-            if(num != winningNums[6]){
+            if(num != nums[6]){
                 sb.append(num);
             }
         }

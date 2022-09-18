@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class WinningNumAdapter extends RecyclerView.Adapter<WinningNumAdapter.ViewHolder>{
-    ArrayList<WinningNumber> items = new ArrayList<WinningNumber>();
+    ArrayList<NumberQuery> items = new ArrayList<NumberQuery>();
 
     @NonNull
     @Override
@@ -24,7 +24,7 @@ public class WinningNumAdapter extends RecyclerView.Adapter<WinningNumAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        WinningNumber item = items.get(position);
+        NumberQuery item = items.get(position);
         holder.setItem(item);
     }
 
@@ -34,19 +34,19 @@ public class WinningNumAdapter extends RecyclerView.Adapter<WinningNumAdapter.Vi
     }
 
 
-    public void addItem(WinningNumber item) {
+    public void addItem(NumberQuery item) {
         items.add(item);
     }
 
-    public void setItems(ArrayList<WinningNumber> items) {
+    public void setItems(ArrayList<NumberQuery> items) {
         this.items = items;
     }
 
-    public WinningNumber getItem(int position) {
+    public NumberQuery getItem(int position) {
         return items.get(position);
     }
 
-    public void setItem(int position, WinningNumber item) {
+    public void setItem(int position, NumberQuery item) {
         items.set(position, item);
     }
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -64,14 +64,14 @@ public class WinningNumAdapter extends RecyclerView.Adapter<WinningNumAdapter.Vi
             statics = itemView.findViewById(R.id.statics);
 
         }
-        public void setItem(WinningNumber item) {
+        public void setItem(NumberQuery item) {
             String roundT = item.getRound() + "회 당첨번호";
             String staticT = "총합:" + item.getTotal() + " 짝홀:" + item.getEven() + "/" +  (6 - item.getEven());
 
 
             round.setText(roundT);
             winningNums.setText(item.numberString());
-            bonusNum.setText(Integer.toString(item.getWinningNums()[6]));
+            bonusNum.setText(Integer.toString(item.getNums()[6]));
 
             statics.setText(staticT);
         }
