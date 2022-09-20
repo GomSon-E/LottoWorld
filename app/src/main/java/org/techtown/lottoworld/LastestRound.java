@@ -13,11 +13,15 @@ import java.util.List;
 
 public class LastestRound {
     public static int round = 1029;
-    int weeks = 0;
 
     public LastestRound() throws ParseException {
-        weeks = calculateWeeks();
+        round = calculateWeeks();
     }
+
+    public static int getRound() {
+        return round;
+    }
+
 
     public int calculateWeeks() throws ParseException {
         Calendar getToday = Calendar.getInstance();
@@ -31,10 +35,8 @@ public class LastestRound {
         long diffSec = (getToday.getTimeInMillis() - cmpDate.getTimeInMillis()) / 1000;
         long diffDays = diffSec / (24*60*60); //일자수 차이
 
-        round = 1028 + weeks;
-        weeks = (int) diffDays / 7;
-
-        return weeks;
+        round = 1028 + (int) diffDays / 7;
+        return round;
     }
 
 }
