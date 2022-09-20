@@ -131,7 +131,13 @@ public class DataAdapter
                 + nums[4] + ", "
                 + nums[5] + ");";
         Log.d("insertPurchaseNum()" , query);
-        mDb.execSQL(query);
+        try {
+            mDb.execSQL(query);
+            Log.d("insertPurchaseNum()" , "try");
+        } catch(Exception e){
+            e.printStackTrace();
+            Log.d("insertPurchaseNum()" , "catch");
+        }
     }
 
     

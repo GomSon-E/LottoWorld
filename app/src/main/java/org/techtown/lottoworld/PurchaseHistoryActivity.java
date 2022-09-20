@@ -17,28 +17,30 @@ public class PurchaseHistoryActivity extends AppCompatActivity {
     NumberQuery nq = new NumberQuery(1028,"2020",temp);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DataAdapter ph_DbAdapter = new DataAdapter(getApplicationContext());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_history);
+
 
         Button imsi;
         imsi = findViewById(R.id.buttonTemp);
         imsi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    ph_DbAdapter.open();
-                    ph_DbAdapter.insertPurchasedNum(nq);
-                    ph_DbAdapter.close();
-                    Log.d("PurchaseHistoryActivity","button OnClicked");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                zxczxc(nq);
             }
         });
-
-
-
+    }
+    public void zxczxc(NumberQuery nq){
+        try {
+            DataAdapter ph_DbAdapter = new DataAdapter(getApplicationContext());
+            ph_DbAdapter.open();
+            ph_DbAdapter.insertPurchasedNum(nq);
+            ph_DbAdapter.close();
+            Log.d("PurchaseHistoryActivity","button OnClicked");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

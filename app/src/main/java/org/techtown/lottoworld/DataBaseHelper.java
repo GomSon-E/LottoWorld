@@ -93,7 +93,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        mDataBase.execSQL("create table if not exists "+);
     }
 
     @Override
