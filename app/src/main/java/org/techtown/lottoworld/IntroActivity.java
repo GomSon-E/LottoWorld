@@ -150,7 +150,7 @@ public class IntroActivity extends AppCompatActivity {
                 return params;
             }
         };
-        request.setShouldCache(false);
+        request.setShouldCache(true);
         requestQueue.add(request);
     }
 

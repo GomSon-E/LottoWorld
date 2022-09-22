@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 public class LastestRound {
-    public static int round = 1029;
+    public static int round = 1031;
 
     public LastestRound() throws ParseException {
         round = calculateWeeks();
