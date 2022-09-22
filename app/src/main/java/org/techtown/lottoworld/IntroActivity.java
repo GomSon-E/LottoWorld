@@ -50,7 +50,7 @@ public class IntroActivity extends AppCompatActivity {
 
                 //최신 회차들 업데이트해서 insert
 
-                addlatestNums();
+                //addlatestNums();
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
