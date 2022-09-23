@@ -1,6 +1,7 @@
 package org.techtown.lottoworld;
 
 import static org.techtown.lottoworld.IntroActivity.numberQueryList;
+import static org.techtown.lottoworld.IntroActivity.numberQueryListforRank;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -17,7 +18,6 @@ public class DataAdapter
 {
     protected static final String TAG = "DataAdapter";
 
-    // TODO : TABLE 이름을 명시해야함
     protected static final String TABLE_NAME = "tb_lotto_list";
     protected static final String TABLE_PURCHASED = "purchase_history_table";
 
@@ -147,19 +147,19 @@ public class DataAdapter
         int i=0,j=0;
         int cnt = 0;
         boolean isBonus = false;
+
         // 요청받은 회차가 현재회차보다 나중이거나, 1보다 적을 경우 예외처리
         if(gR_round > LatestRound.round || gR_round < 1){
             return -1;
         }
 
-        NumberQuery winningNumOngRround = numberQueryList.get(gR_round);
+        NumberQuery winningNumOngRround = numberQueryListforRank.get(gR_round - 1);
 
-        while(i<7 && j<6){
+        while(i<6 && j<6){
             if(winningNumOngRround.nums[i] == nums[j]){
                 i++;
                 j++;
                 cnt++;
-                if(i == 6) isBonus = true;
             } else if(winningNumOngRround.nums[i] < nums[j]){
                 i++;
             } else{
@@ -167,22 +167,36 @@ public class DataAdapter
             }
         }
 
+        for(int ti=0;ti<6;ti++) {
+            if(winningNumOngRround.nums[6] == nums[ti])
+                isBonus = true;
+        }
+
         switch (cnt) {
             case 3:
-                return 5;
+                rank = 5;
+                break;
             case 4:
-                return 4;
+                rank = 4;
+                break;
             case 5:
-                return 3;
+                rank = 3;
+                break;
             case 6:
                 if(isBonus){
-                    return 2;
+                    rank = 2;
+                    break;
                 }
                 else{
-                    return 1;
+                    rank = 1;
+                    break;
                 }
+            default:
+                rank = 6;
+                break;
         }
-        
+
+        Log.d("count체크",Integer.toString(rank));
         return rank;
     }
 }

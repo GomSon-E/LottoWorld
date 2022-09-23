@@ -14,7 +14,7 @@ import java.util.List;
 public class IntroActivity extends AppCompatActivity {
 
     static public List<NumberQuery> numberQueryList;
-
+    static public List<NumberQuery> numberQueryListforRank;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +48,7 @@ public class IntroActivity extends AppCompatActivity {
             mDbAdapter.open();
             // db에 있는 값들을 model을 적용해서 넣는다.
             numberQueryList = mDbAdapter.getWinningData();
+            numberQueryListforRank = mDbAdapter.getWinningData();
             Collections.reverse(numberQueryList);
             // db 닫기
             mDbAdapter.close();
