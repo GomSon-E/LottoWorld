@@ -50,7 +50,7 @@ public class IntroActivity extends AppCompatActivity {
 
                 //최신 회차들 업데이트해서 insert
 
-                //addlatestNums();
+                addlatestNums();
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
@@ -93,7 +93,7 @@ public class IntroActivity extends AppCompatActivity {
         int lastestRound = round.getRound();
 
  */
-        for(int i = 1029 + 1; i <= 1031; i++){
+        for(int i = 1029; i <= 1031; i++){
             getLottoApi(i);
         }
 
@@ -151,7 +151,8 @@ public class IntroActivity extends AppCompatActivity {
                 return params;
             }
         };
-        request.setShouldCache(true);
+        request.setShouldCache(false);
+        requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
 

@@ -17,7 +17,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     // database 의 파일 경로
     private static String DB_PATH = "";
-    private static String DB_NAME = "lotto_data.db";
+    private static String DB_NAME = "lotto_data2.db";
     private SQLiteDatabase mDataBase;
     private Context mContext;
 

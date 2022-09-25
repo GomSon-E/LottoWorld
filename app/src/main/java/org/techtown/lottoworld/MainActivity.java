@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 return params;
             }
         };
-        request.setShouldCache(true);
+        request.setShouldCache(false);
         requestQueue.add(request);
     }
 
